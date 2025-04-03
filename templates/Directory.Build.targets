@@ -1,0 +1,3 @@
+<Project>
+    <Import Project="buildprops/TargetFrameWork/TargetFrameWork.targets"/>
+</Project>

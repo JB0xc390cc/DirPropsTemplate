@@ -1,28 +1,11 @@
 <Project>
     <PropertyGroup>
-        <!-- Set all the build artifacts to single directory, so they won't be separated under 
-             several different project src folders.-->
-        <UseArtifactsOutput>true</UseArtifactsOutput>
-        <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
-
-
-        <!-- This framework will be used as a TarrgetFrameWork for all projects by default-->
-        <DefaultTargetFrameWork>net9.0</DefaultTargetFrameWork>
-        <!-- If a project sets the HighlyCompatible property to true then the framework version 
-             provided by this property will be used as a TargetFrameWork -->
-        <CompatibleTargetFrameWork>netstandard2.0</CompatibleTargetFrameWork>
-
-
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-
-        <!-- Use explicit language verison instead of latest, because it can differ on developer 
-             macihnes -->
-        <LangVersion>13</LangVersion>
-
-        <!-- Include the file that contains (only)logic for setting up project configuration,
-             and so it does not contain any constant/data.
-             all unconditinal property sets must be stay inside Directory.Build.props-->
-        <Import Project="Directory.Build.RulesConfiguration.props"/>
+        <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
     </PropertyGroup>
+    
+    <Import Project="buildprops/Artifacts/Artifacts.props"/>
+    <Import Project="buildprops/GlobalUsings/GlobalUsings.props"/>
+    <Import Project="buildprops/Language/Language.props"/>
+    <Import Project="buildprops/TargetFrameWork/TargetFrameWork.props"/>
+    <Import Project="buildprops/NugetPackages/NugetPackage.props"/>
 </Project>

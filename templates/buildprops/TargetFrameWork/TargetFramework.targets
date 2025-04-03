@@ -1,24 +1,9 @@
-<!--
- ***************************************************************************************************
- *                                                                                                 *     
- *         THIS FILE SHOULD CONTAIN CONFIGURATION LOGIC FOR Directory.Build.props                  *
- *    It should contain conditionals and more complex logic, but the raw Property settings         *
- *  like <ImplicitUsings>true</ImplicitUsings> should be placed into Directory.Build.props file    *
- *                                                                                                 *
- *                                                                                                 *
- ***************************************************************************************************
- -->
-
-
 <Project>
     <PropertyGroup>
         <!--Set target framework verison centrally. If the project must be highly compatible with the most possible 
         consuming projects then it must target netstandard2.0 -->
         <TargetFramework Condition="'$(HighlyCompatible)' != 'true'">$(DefaultTargetFramework)</TargetFramework>
         <TargetFramework Condition="'$(HighlyCompatible)' == 'true'">$(CompatibleTargetFrameWork)</TargetFramework>
-
-        <!-- Disable packaging of test projects. -->
-        <IsPackable Condition="'$(IsTestProject)' != 'true'">flase</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
