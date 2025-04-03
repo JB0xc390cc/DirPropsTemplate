@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "JB0xc390cc",
+  "classifications": [ "Common", "Code" ],
+  "identity": "JBTemplates.DirProps",
+  "name": "Directory Properties vertical slice  template",
+  "shortName": "DirProps",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
+}
